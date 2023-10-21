@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - interagiveis
+  - dialogo
+  - item
+  - descarga
+  - sai_quarto
+  - sai_banheiro
+  - entra_banheiro
+  - entra_quarto
+  - entra_sala
+  - entra_cozinha
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Moveis
+  - Fundo
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Fundo
+    uniqueID: 2255920313
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Moveis
+    uniqueID: 801626359
+    locked: 0
