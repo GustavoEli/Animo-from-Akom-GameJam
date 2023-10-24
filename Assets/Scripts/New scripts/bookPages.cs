@@ -14,24 +14,17 @@ public class bookPages : MonoBehaviour
     bool isReading;
     int pagesIndex = 0;
 
-    //[SerializeField] GameObject pontaEsq, pontaDire;
-    //[SerializeField] GameObject verificaPlayer;
-    //[SerializeField] GameObject paginas_object;
-
     void Start() {
 
         leftPointImage = gameObject.GetComponent<Image>();
         rightPointImage = gameObject.GetComponent<Image>();
         leftPointImage.sprite = left;
         rightPointImage.sprite = right;
-
-        /*spriteImage = paginas_object.GetComponent<Image>();
-        player = verificaPlayer.GetComponent<Player>();*/
     }
 
     void Update() {
         MovePages();
-        verificaPaginas();
+        VerifyPages();
     }
 
     private void MovePages() {
@@ -57,7 +50,7 @@ public class bookPages : MonoBehaviour
         }
     }
 
-    private void verificaPaginas() {
+    private void VerifyPages() {
 
         if (pagesIndex == 0) {
             leftPointImage.gameObject.SetActive(false);

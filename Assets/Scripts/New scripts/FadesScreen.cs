@@ -53,7 +53,7 @@ public class FadesScreen : MonoBehaviour
         //    }
         //}
         #endregion
-        checkMood();
+        CheckMood();
         verifyItem();
     }
 
@@ -65,9 +65,9 @@ public class FadesScreen : MonoBehaviour
         }
     }
 
-    private void checkMood() {
+    private void CheckMood() {
         if (itemName == "livro" && gotItem || itemName == "jam" && gotItem) {
-            gainMood();
+            GainMood();
             gotItem = playerItem.pegou_item = false;
         }
 
@@ -83,13 +83,13 @@ public class FadesScreen : MonoBehaviour
         }
     }
 
-    private void loseMood() {
+    private void LoseMood() {
         moodPoints = moodPoints + looseMoodPoints;
         color.a = (byte)moodPoints;
         image.color = color;
     }
 
-    private void gainMood() {
+    private void GainMood() {
         moodPoints = moodPoints - gainMoodPoints;
         color.a = (byte)moodPoints;
         image.color = color;

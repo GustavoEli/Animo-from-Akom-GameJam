@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Player1 : MonoBehaviour
 {
     [SerializeField] float velocity;
-    [SerializeField] GameObject[] itens = new GameObject[4];
-    [SerializeField] Image[] imageItem = new Image[4];
-    [SerializeField] Transform canvasPages;
+    [SerializeField] InventoryManagement inventory;
+    GameObject[] itens = new GameObject[4];
+    [SerializeField] GameObject pagesCanvas;
 
     bool isReading;
     Animator animator;
@@ -50,95 +50,23 @@ public class Player1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && isReading) {
             Time.timeScale = 1;
             isReading = false;
-            canvasPages.gameObject.SetActive(false);
+            pagesCanvas.SetActive(false);
         }
     }
 
-    private void AddItem(GameObject addItem)
-    {
-        for (int i = 0; i <= itens.Length; i++)
-        {
-            if (itens[i] == null)
-            {
-                itens[i] = addItem.gameObject;
-                imageItem[i].sprite = addItem.GetComponent<SpriteRenderer>().sprite;
-                imageItem[i].enabled = true;
-                return;
-            }
-        }
-    }
+    private void VerifyInventory(GameObject gameObject) {
+        
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1)) {
+            inventory.VerifyLowerPoint(gameObject, 0, itens);
 
-    private void RemoveItem(GameObject removeItem) {
+        } else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2)) {
+            inventory.VerifyLowerPoint(gameObject, 1, itens);
 
-        for (int i = 0; i < itens.Length; i++)
-        {
-            if (itens[i] == removeItem)
-            {
-                itens[i] = null;
-                imageItem[i].sprite = null;
-                imageItem[i].enabled = false;
-                return;
-            }
-        }
-    }
+        } else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3)) {
+            inventory.VerifyLowerPoint(gameObject, 2, itens);
 
-    private void leaveObject(int index)
-    {
-        itens[index].SetActive(false);
-        itens[index].transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
-    }
-
-    private void verifyInventory(GameObject gameObject)
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            verifyLowerPoint(gameObject, 0);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            verifyLowerPoint(gameObject, 1);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            verifyLowerPoint(gameObject, 2);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4))
-        {
-            verifyLowerPoint(gameObject, 3);
-        }
-    }
-
-    private void verifyLowerPoint(GameObject gameObject, int indice)
-    {
-
-        switch (gameObject.name)
-        {
-            case "descarga_armario":
-                if (itens[indice].name == "calça" || itens[indice].name == "camisa1" || itens[indice].name == "camisa2")
-                {
-                    leaveObject(indice);
-                    RemoveItem(itens[indice]);
-                }
-                break;
-
-            case "descarga_pia":
-                if (itens[indice].name == "pratos_sujos")
-                {
-                    leaveObject(indice);
-                    RemoveItem(itens[indice]);
-                }
-                break;
-
-            case "descarga_lixo":
-                if (itens[indice].name == "latas" || itens[indice].name == "racao")
-                {
-                    leaveObject(indice);
-                    RemoveItem(itens[indice]);
-                }
-                break;
+        } else if (Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad4)) {
+            inventory.VerifyLowerPoint(gameObject, 3, itens);
         }
     }
 
@@ -149,30 +77,25 @@ public class Player1 : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        switch (collision.gameObject.tag)
-        {
+    private void OnTriggerStay2D(Collider2D collision) {
+        
+        switch (collision.gameObject.tag) {
             case "item":
-                if (Input.GetKeyDown(KeyCode.P))
-                {
-                    AddItem(collision.gameObject);
+                if (Input.GetKeyDown(KeyCode.P)) {
+                    inventory.AddItem(collision.gameObject, itens);
                     collision.gameObject.SetActive(false);
-                    //verify_item(collision.gameObject);
-                    //pegou_item = true;
                 }
                 break;
 
             case "descarga":
-                verifyInventory(collision.gameObject);
+                VerifyInventory(collision.gameObject);
                 break;
 
             case "diario":
-                if (Input.GetKeyDown(KeyCode.E))
-                {
+                if (Input.GetKeyDown(KeyCode.E)) {
                     Time.timeScale = 0;
                     isReading = true;
-                    canvasPages.gameObject.SetActive(true);
+                    pagesCanvas.SetActive(true);
                 }
                 break;
         }

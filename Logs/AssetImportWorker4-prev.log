@@ -15,11 +15,11 @@ C:/Users/gusta/Desktop/PROJETOS/GameJams/AKOM quarentine game jam+ 2020/Game Jam
 -logFile
 Logs/AssetImportWorker4.log
 -srvPort
-45382
+64483
 Successfully changed project path to: C:/Users/gusta/Desktop/PROJETOS/GameJams/AKOM quarentine game jam+ 2020/Game Jam
 C:/Users/gusta/Desktop/PROJETOS/GameJams/AKOM quarentine game jam+ 2020/Game Jam
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 3014.19 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 118.28 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.19f1 (68f137dc9bbe)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.19f1-x86_64/Editor/Data/Resources/UnitySubsystems

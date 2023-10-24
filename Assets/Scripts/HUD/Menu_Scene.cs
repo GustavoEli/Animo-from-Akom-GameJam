@@ -5,17 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Menu_Scene : MonoBehaviour
 {
-    public Transform canvas_menu;
-    public Transform canvas_creditos;
-    public Transform canvas_tutorial;
+    public GameObject canvas_menu;
+    public GameObject canvas_creditos;
+    public GameObject canvas_tutorial;
 
     public void Iniciar_jogo() {
         SceneManager.LoadScene(1);
-    }
-
-    public void tutorial() {
-        canvas_tutorial.gameObject.SetActive(true);
-        canvas_menu.gameObject.SetActive(false);
     }
 
     public void creditos() {
@@ -42,4 +37,9 @@ public class Menu_Scene : MonoBehaviour
     public void Sair_jogo() {
         Application.Quit();
     }
+
+    //public void tutorial() {
+    //    canvas_tutorial.gameObject.SetActive(true);
+    //    canvas_menu.gameObject.SetActive(false);
+    //}
 }

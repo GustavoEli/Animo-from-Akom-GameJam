@@ -5,55 +5,47 @@ using UnityEngine.SceneManagement;
 
 public class Pause_System : MonoBehaviour
 {
-    public Transform panel_pause;
-    public bool estaPausado = false;
-    public GameObject Player_animo;
+    public GameObject panel_pause;
+    bool isPaused = false;
+    [SerializeField] GameObject Player_animo;
     int animo;
-    bool parar;
+    //bool stop;
 
-    public void Update()
-    {
+    public void Update() {
         animo = Player_animo.GetComponent<Fades_player>().animo;
 
-        if (animo <= 200)
-        {
-            parar = false;
-        }else {
-            parar = true;
-        }
-            if (Input.GetKeyDown(KeyCode.Escape) && parar == false)
-            {
-
-                if (estaPausado)
-                {
-                    continuar();
-                }
-                else
-                {
-                    Pausar();
-                }
+        //if (animo <= 200) {
+        //    stop = false;
+        //}else {
+        //    stop = true;
+        //}
+        
+        if (Input.GetKeyDown(KeyCode.Escape) /*&& stop == false*/) {
+            if (isPaused) {
+                Continue();
+            } else {
+                Pause();
             }
+        }
     }
 
-    public void Pausar() {
+    private void Pause() {
         Time.timeScale = 0;
-        panel_pause.gameObject.SetActive(true);
-        estaPausado = true;
+        panel_pause.SetActive(true);
+        isPaused = true;
     }
 
-    public void continuar() {
+    public void Continue() {
         Time.timeScale = 1;
-        panel_pause.gameObject.SetActive(false);
-        estaPausado = false;
+        panel_pause.SetActive(false);
+        isPaused = false;
     }
 
-    public void Bt_voltar() {
-        continuar();
+    public void Bt_Back() {
+        Continue();
     }
-
-    public void Bt_instrucao() { }
-
-    public void Bt_sair() {
+    public void Bt_Leave() {
         Application.Quit();
     }
+    //public void Bt_instrucao() { }
 }

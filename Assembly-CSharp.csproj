@@ -70,11 +70,12 @@
     <Compile Include="Assets\Scripts\New scripts\Player1.cs" />
     <Compile Include="Assets\Scripts\condicaoVitoria.cs" />
     <Compile Include="Assets\Scripts\HUD\gameOver_buttons.cs" />
-    <Compile Include="Assets\Scripts\Fades_player.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Fades_player.cs" />
     <Compile Include="Assets\Scripts\Teste\Moveis.cs" />
     <Compile Include="Assets\Scripts\New scripts\HouseDoors.cs" />
     <Compile Include="Assets\Scripts\Teste\Item.cs" />
     <Compile Include="Assets\Scripts\HUD\Pause_System.cs" />
+    <Compile Include="Assets\Scripts\New scripts\InventoryManagement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
