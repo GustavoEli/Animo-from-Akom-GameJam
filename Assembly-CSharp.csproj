@@ -53,29 +53,30 @@
     <UnityVersion>2020.3.19f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Teste\Inventory.cs" />
-    <Compile Include="Assets\Scripts\pontaPaginas.cs" />
-    <Compile Include="Assets\Scripts\HUD\Menu_Scene.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\porta_comodo.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Teste\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\pontaPaginas.cs" />
+    <Compile Include="Assets\Scripts\New scripts\HUD\Menu_Scene.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\porta_comodo.cs" />
     <Compile Include="Assets\Scripts\New scripts\bookPages.cs" />
-    <Compile Include="Assets\Scripts\Paginas.cs" />
-    <Compile Include="Assets\Scripts\Mouse.cs" />
-    <Compile Include="Assets\Scripts\Menu_sons.cs" />
-    <Compile Include="Assets\Scripts\organiza_Itens.cs" />
-    <Compile Include="Assets\Scripts\Teste\Item_Teste.cs" />
-    <Compile Include="Assets\Scripts\New scripts\FadesScreen.cs" />
-    <Compile Include="Assets\Scripts\Music_system.cs" />
-    <Compile Include="Assets\Scripts\Teste\Base_Obj.cs" />
-    <Compile Include="Assets\Scripts\New scripts\Player1.cs" />
-    <Compile Include="Assets\Scripts\condicaoVitoria.cs" />
-    <Compile Include="Assets\Scripts\HUD\gameOver_buttons.cs" />
-    <Compile Include="Assets\Scripts\Old scripts\Fades_player.cs" />
-    <Compile Include="Assets\Scripts\Teste\Moveis.cs" />
-    <Compile Include="Assets\Scripts\New scripts\HouseDoors.cs" />
-    <Compile Include="Assets\Scripts\Teste\Item.cs" />
-    <Compile Include="Assets\Scripts\HUD\Pause_System.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Paginas.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Mouse.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Menu_sons.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\organiza_Itens.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Teste\Item_Teste.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\FadesScreen.cs" />
     <Compile Include="Assets\Scripts\New scripts\InventoryManagement.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Music_system.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Teste\Base_Obj.cs" />
+    <Compile Include="Assets\Scripts\New scripts\Player1.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\condicaoVitoria.cs" />
+    <Compile Include="Assets\Scripts\New scripts\HUD\gameOver_buttons.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Fades_player.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Teste\Moveis.cs" />
+    <Compile Include="Assets\Scripts\New scripts\HouseDoors.cs" />
+    <Compile Include="Assets\Scripts\Old scripts\Teste\Item.cs" />
+    <Compile Include="Assets\Scripts\New scripts\HUD\Pause_System.cs" />
+    <Compile Include="Assets\Scripts\New scripts\GameManagement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

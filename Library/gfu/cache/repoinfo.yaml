@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 1
-  lastUpdatedAtString: 2023-10-24T16:43:57.207-03:00
-  initializedAtString: 2023-10-24T16:43:57.207-03:00
+  lastUpdatedAtString: 2023-10-25T15:52:22.674-03:00
+  initializedAtString: 2023-10-25T15:52:22.674-03:00
   currentGitRemote:
     name: origin
     url: https://github.com/GustavoEli/Animo-from-Akom-GameJam.git

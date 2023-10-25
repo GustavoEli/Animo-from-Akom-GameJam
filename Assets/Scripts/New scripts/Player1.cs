@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class Player1 : MonoBehaviour
 {
+    [Header("Player Proprierties")]
     [SerializeField] float velocity;
     [SerializeField] InventoryManagement inventory;
+    [HideInInspector] public bool gotItem;
+    [HideInInspector] public string verifyItem;
     GameObject[] itens = new GameObject[4];
-    [SerializeField] GameObject pagesCanvas;
-
-    bool isReading;
     Animator animator;
     SpriteRenderer sprite;
+    bool isReading;
+
+    [Header("Canvas info")]
+    [SerializeField] GameObject pagesCanvas;
 
     void Start()
     {
@@ -47,7 +51,7 @@ public class Player1 : MonoBehaviour
             animator.SetBool("andar", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && isReading) {
+        if (Input.GetKeyDown(KeyCode.E) && isReading) {
             Time.timeScale = 1;
             isReading = false;
             pagesCanvas.SetActive(false);
@@ -84,6 +88,7 @@ public class Player1 : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.P)) {
                     inventory.AddItem(collision.gameObject, itens);
                     collision.gameObject.SetActive(false);
+                    gotItem = true; 
                 }
                 break;
 
@@ -92,7 +97,7 @@ public class Player1 : MonoBehaviour
                 break;
 
             case "diario":
-                if (Input.GetKeyDown(KeyCode.E)) {
+                if (Input.GetKeyDown(KeyCode.E) && !isReading) {
                     Time.timeScale = 0;
                     isReading = true;
                     pagesCanvas.SetActive(true);
